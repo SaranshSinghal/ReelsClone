@@ -71,9 +71,12 @@ function UploadFile(props) {
             .add(obj)
             .then(async (docRef) => {
               console.log(docRef);
+
               let res = await database.users
                 .doc(props.userData.userId)
                 .update({ postIds: [...props.userData.postIds, docRef.id] });
+
+              console.log(res);
             })
             .then(() => {
               setLoading(false);

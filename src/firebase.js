@@ -3,7 +3,7 @@ import "firebase/compat/auth";
 import "firebase/compat/storage";
 import "firebase/compat/firestore";
 
-let { Firebase_Config } = require("../secrets");
+let { Firebase_Config } = require("./secrets");
 firebase.initializeApp(Firebase_Config);
 
 export const auth = firebase.auth();

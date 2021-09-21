@@ -1,9 +1,9 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/storage";
-import "firebase/firestore";
+import firebase, { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import "firebase/compat/storage";
+import { getFirestore, collection, query } from "firebase/firestore";
 
-firebase.initializeApp({
+const firebaseApp = initializeApp({
   apiKey: "AIzaSyDMbGyKPHHKApEajVlF3VlAr8WWY9DOVIg",
   authDomain: "reelsclone-007.firebaseapp.com",
   projectId: "reelsclone-007",
@@ -12,12 +12,12 @@ firebase.initializeApp({
   appId: "1:504188072427:web:28291764892002f594a9ae",
 });
 
-export const auth = firebase.auth();
-const firestore = firebase.firestore();
+export const auth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
 
 export const database = {
-  users: firestore.collection("users"),
-  posts: firestore.collection("posts"),
+  users: query(collection(firestore, "users")),
+  posts: query(collection(firestore, "posts")),
   getCurrentTimeStamp: firebase.firestore.FieldValue.serverTimestamp,
 };
 

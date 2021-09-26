@@ -45,7 +45,10 @@ function AddComment({ userData = null, postData = null }) {
       <Button
         onClick={handleOnEnter}
         disabled={text === "" ? true : false}
-        className={classes.cbtn}
+        style={{
+          marginRight: "1%",
+          marginTop: "4%",
+        }}
         color="primary"
       >
         Post

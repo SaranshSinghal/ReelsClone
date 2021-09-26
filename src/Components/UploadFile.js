@@ -100,10 +100,10 @@ function UploadFile(props) {
           <label htmlFor="contained-button-file">
             <Input
               accept="video/*"
+              type="file"
+              onChange={onChange}
               id="contained-button-file"
               multiple
-              onChange={onChange}
-              type="file"
             />
             <Button
               variant="contained"

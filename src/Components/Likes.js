@@ -16,7 +16,7 @@ function Likes({ userData = null, postData = null }) {
   const handleLike = async () => {
     if (like === true) {
       let uarr = postData.likes.filter((el) => {
-        return el != userData.userId;
+        return el !== userData.userId;
       });
 
       await database.posts.doc(postData.postId).update({

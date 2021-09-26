@@ -27,11 +27,10 @@ function Feed() {
           <Header />
           <div style={{ height: "1.5vh" }} />
           <div
-            className="feed-container"
             style={{
-              display: flex,
-              justifyContent: center,
-              alignItems: center,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <div className="center" style={{ height: "86vh" }}>
